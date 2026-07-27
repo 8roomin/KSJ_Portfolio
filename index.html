@@ -333,7 +333,7 @@
     }
     .filter-tab {
       font-family: inherit;
-      font-size: 14px;
+      font-size: 17px;
       font-weight: 600;
       padding: 9px 20px;
       border-radius: var(--radius-full);
@@ -361,26 +361,27 @@
       box-shadow: var(--shadow-card);
       padding: 26px 24px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
     }
     .project-card:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow-card-hover);
     }
     .project-card-title {
-      font-size: 16px;
+      font-size: 19px;
       font-weight: 700;
       color: var(--color-navy);
       margin-bottom: 10px;
       padding-right: 64px;
     }
     .project-card-purpose {
-      font-size: 14px;
+      font-size: 17px;
       color: var(--color-body);
       margin-bottom: 14px;
     }
     .project-card-role-badges { display: flex; flex-wrap: wrap; gap: 8px; }
     .project-card-role-badges li {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--color-blue-dark);
       background: var(--color-pill-bg);
@@ -391,7 +392,7 @@
       position: absolute;
       top: 26px;
       right: 24px;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--color-muted);
     }
@@ -465,7 +466,7 @@
       margin-bottom: 20px;
     }
     .achievements-highlight-details li {
-      font-size: 14px;
+      font-size: 17px;
       color: var(--color-blue-dark);
       font-weight: 700;
       padding: 3px 0;
@@ -486,7 +487,7 @@
       background: var(--color-navy);
       color: #FFFFFF;
       font-weight: 600;
-      font-size: 13px;
+      font-size: 16px;
       text-align: center;
       padding: 14px 16px;
     }
@@ -549,8 +550,8 @@
       font-weight: 600;
       color: var(--color-navy);
     }
-    #contact-cta-info a[data-contact-field="phone"]::before { content: "📞 "; }
-    #contact-cta-info a[data-contact-field="email"]::before { content: "✉️ "; }
+    #contact-cta-info a[data-contact-field="phone"]::before { content: "📲 "; }
+    #contact-cta-info a[data-contact-field="email"]::before { content: "📧 "; }
     #contact-cta-pdf-download {
       display: inline-block;
       background: var(--color-blue);
@@ -623,6 +624,50 @@
     }
     .floating-contact-detail.is-copied {
       color: var(--color-blue);
+    }
+
+    /* ============================================================
+       PROJECT LIGHTBOX
+    ============================================================ */
+    #section-project-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background: rgba(20, 22, 34, 0.82);
+      backdrop-filter: blur(2px);
+    }
+    #section-project-lightbox.is-open {
+      display: flex;
+    }
+    #project-lightbox-image {
+      max-width: 90vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      cursor: default;
+    }
+    #project-lightbox-close {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--color-navy);
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    #project-lightbox-close:hover {
+      background: #FFFFFF;
     }
 
     /* ============================================================
@@ -829,8 +874,8 @@
       <!-- 우선 노출 카드 (P0) -->
       <div id="featured-projects-grid" data-subsection="grid">
 
-        <article class="project-card" data-project-id="aivem-ir" data-project-category="ir" data-priority="1">
-          <h3 class="project-card-title" data-field="title">아이브엠(AIVEM) IR</h3>
+        <article class="project-card" data-project-id="aivem-ir" data-project-category="ir" data-priority="1" data-project-image="project-aivem-ir.png">
+          <h3 class="project-card-title" data-field="title">[Seed IR] AI 정신건강 진단 보조 플랫폼</h3>
           <p class="project-card-purpose" data-field="purpose">AI 정신건강 진단 보조 플랫폼 개발을 위한 Seed 투자 유치금 확보</p>
           <ul class="project-card-role-badges" data-field="role-badges">
             <li data-role="visualization-design">시각화·디자인 100%</li>
@@ -840,8 +885,8 @@
           <span class="project-card-date" data-field="date">2025.02</span>
         </article>
 
-        <article class="project-card" data-project-id="starlabs-ir" data-project-category="ir" data-priority="2">
-          <h3 class="project-card-title" data-field="title">스타랩스(STARLABS) IR</h3>
+        <article class="project-card" data-project-id="starlabs-ir" data-project-category="ir" data-priority="2" data-project-image="project-starlabs-ir.png">
+          <h3 class="project-card-title" data-field="title">[Pre-A IR] AI GPU 서버 공급 및 인프라 구축 사업</h3>
           <p class="project-card-purpose" data-field="purpose">AI GPU 서버 공급 및 인프라 구축 사업을 위한 pre-A 투자 유치금 확보</p>
           <ul class="project-card-role-badges" data-field="role-badges">
             <li data-role="visualization-design">시각화·디자인 90%</li>
@@ -851,8 +896,8 @@
           <span class="project-card-date" data-field="date">2024.03</span>
         </article>
 
-        <article class="project-card" data-project-id="cafu-proposal" data-project-category="proposal" data-priority="3">
-          <h3 class="project-card-title" data-field="title">CAFU 제안서</h3>
+        <article class="project-card" data-project-id="cafu-proposal" data-project-category="proposal" data-priority="3" data-project-image="project-cafu-proposal.png">
+          <h3 class="project-card-title" data-field="title">[제안서] 모바일 올인원 자동차 서비스 플랫폼 'CAFU' 한국 런칭</h3>
           <p class="project-card-purpose" data-field="purpose">모바일 올인원 자동차 서비스 플랫폼 'CAFU' 한국 런칭</p>
           <ul class="project-card-role-badges" data-field="role-badges">
             <li data-role="service-planning">서비스기획 80%</li>
@@ -862,8 +907,8 @@
           <span class="project-card-date" data-field="date">2024.01</span>
         </article>
 
-        <article class="project-card" data-project-id="testbed-seoul-2026" data-project-category="business-plan" data-priority="4">
-          <h3 class="project-card-title" data-field="title">2026 테스트베드서울 사업계획서</h3>
+        <article class="project-card" data-project-id="testbed-seoul-2026" data-project-category="business-plan" data-priority="4" data-project-image="project-testbed-seoul-2026.png">
+          <h3 class="project-card-title" data-field="title">[사업계획서] 2026 테스트베드서울</h3>
           <p class="project-card-purpose" data-field="purpose">AI 기반 임신부 정신건강 자가모니터링 및 실시간 리포팅 서비스 개발</p>
           <ul class="project-card-role-badges" data-field="role-badges">
             <li data-role="necessity">실증사업 필요성 100%</li>
@@ -877,8 +922,8 @@
           <span class="project-card-date" data-field="date">2026.03</span>
         </article>
 
-        <article class="project-card" data-project-id="framix-ir" data-project-category="ir" data-priority="5">
-          <h3 class="project-card-title" data-field="title">프래믹스(FRAMIX) IR</h3>
+        <article class="project-card" data-project-id="framix-ir" data-project-category="ir" data-priority="5" data-project-image="project-framix-ir.png">
+          <h3 class="project-card-title" data-field="title">[Seed IR] XR 패션 커머스 솔루션</h3>
           <p class="project-card-purpose" data-field="purpose">리얼타임 XR 패션 커머스 솔루션 사업을 위한 Seed 투자 유치금 확보</p>
           <ul class="project-card-role-badges" data-field="role-badges">
             <li data-role="visualization-design">시각화 및 디자인 80%</li>
@@ -888,19 +933,19 @@
           <span class="project-card-date" data-field="date">2024.01</span>
         </article>
 
-        <article class="project-card" data-project-id="aivem-ir-v2" data-project-category="ir" data-priority="6">
-          <h3 class="project-card-title" data-field="title">아이브엠 IR</h3>
-          <p class="project-card-purpose" data-field="purpose">AI 정신건강 진단 보조 플랫폼 개발을 위한 Seed 투자 유치금 확보</p>
+        <article class="project-card" data-project-id="aivem-ir-v2" data-project-category="ir" data-priority="6" data-project-image="project-aivem-ir-v2.png">
+          <h3 class="project-card-title" data-field="title">[Seed IR] AI 의료 분석 솔루션</h3>
+          <p class="project-card-purpose" data-field="purpose">AI 의료 분석 솔루션 개발을 위한 Seed 투자 유치금 확보</p>
           <ul class="project-card-role-badges" data-field="role-badges">
             <li data-role="visualization-design">시각화 및 디자인 80%</li>
             <li data-role="revenue-model">예상매출 및 BM 90%</li>
             <li data-role="market-research">시장데이터조사 100%</li>
           </ul>
-          <span class="project-card-date" data-field="date">2025.02</span>
+          <span class="project-card-date" data-field="date">2024.04</span>
         </article>
 
-        <article class="project-card" data-project-id="mna-proposal" data-project-category="proposal" data-priority="7">
-          <h3 class="project-card-title" data-field="title">아이브엠 M&amp;A 제안서</h3>
+        <article class="project-card" data-project-id="mna-proposal" data-project-category="proposal" data-priority="7" data-project-image="project-mna-proposal.png">
+          <h3 class="project-card-title" data-field="title">[제안서] M&amp;A(인수합병) 및 전략적 파트너십 유치</h3>
           <p class="project-card-purpose" data-field="purpose">M&amp;A(인수합병) 및 전략적 파트너십 유치</p>
           <ul class="project-card-role-badges" data-field="role-badges">
             <li data-role="visualization-design">시각화 및 디자인 100%</li>
@@ -909,8 +954,8 @@
           <span class="project-card-date" data-field="date">2025.12</span>
         </article>
 
-        <article class="project-card" data-project-id="biocore-2024-plan" data-project-category="business-plan" data-priority="8">
-          <h3 class="project-card-title" data-field="title">바이오 Core Facility 구축사업 계획서</h3>
+        <article class="project-card" data-project-id="biocore-2024-plan" data-project-category="business-plan" data-priority="8" data-project-image="project-biocore-2024-plan.png">
+          <h3 class="project-card-title" data-field="title">[사업계획서] 바이오 Core Facility 구축사업</h3>
           <p class="project-card-purpose" data-field="purpose">디지털 AI 정신건강 치료제 통합 플랫폼 개발</p>
           <ul class="project-card-role-badges" data-field="role-badges">
             <li data-role="vision-goal">경영비전 및 목표 80%</li>
@@ -925,8 +970,8 @@
           <span class="project-card-date" data-field="date">2024.07</span>
         </article>
 
-        <article class="project-card" data-project-id="intel-oneapi-plan" data-project-category="business-plan" data-priority="9">
-          <h3 class="project-card-title" data-field="title">인텔 협업 프로그램 사업계획서</h3>
+        <article class="project-card" data-project-id="intel-oneapi-plan" data-project-category="business-plan" data-priority="9" data-project-image="project-intel-oneapi-plan.png">
+          <h3 class="project-card-title" data-field="title">[사업계획서] 인텔 협업 프로그램</h3>
           <p class="project-card-purpose" data-field="purpose">인텔 oneAPI 기반 모듈화 의료영상 AI 분석 솔루션 서비스 개발안</p>
           <ul class="project-card-role-badges" data-field="role-badges">
             <li data-role="background">아이템 배경 및 필요성 100%</li>
@@ -941,8 +986,8 @@
           <span class="project-card-date" data-field="date">2024.03</span>
         </article>
 
-        <article class="project-card" data-project-id="gwangjin-hub-plan" data-project-category="business-plan" data-priority="10">
-          <h3 class="project-card-title" data-field="title">광진경제허브센터 입주 사업계획서</h3>
+        <article class="project-card" data-project-id="gwangjin-hub-plan" data-project-category="business-plan" data-priority="10" data-project-image="project-gwangjin-hub-plan.png">
+          <h3 class="project-card-title" data-field="title">[사업계획서] 광진경제허브센터 입주 신청</h3>
           <p class="project-card-purpose" data-field="purpose">XR 패션 사전구매 및 소비자분석 서비스 개발안</p>
           <ul class="project-card-role-badges" data-field="role-badges">
             <li data-role="background">아이템 배경 및 필요성 100%</li>
@@ -955,8 +1000,8 @@
           <span class="project-card-date" data-field="date">2024.01</span>
         </article>
 
-        <article class="project-card" data-project-id="teen-mental-health-service" data-project-category="service-planning" data-priority="11">
-          <h3 class="project-card-title" data-field="title">청소년 정신건강 웹앱 서비스기획</h3>
+        <article class="project-card" data-project-id="teen-mental-health-service" data-project-category="service-planning" data-priority="11" data-project-image="project-teen-mental-health-service.png">
+          <h3 class="project-card-title" data-field="title">[기획/PM] 청소년 정신건강 웹앱 서비스</h3>
           <p class="project-card-purpose" data-field="purpose">청소년의 정신건강 예방 및 관리를 위한 웹앱 서비스 및 관리자페이지 개발</p>
           <ul class="project-card-role-badges" data-field="role-badges">
             <li data-role="content-planning">콘텐츠기획 80%</li>
@@ -969,8 +1014,8 @@
           <span class="project-card-date" data-field="date">2025.09</span>
         </article>
 
-        <article class="project-card" data-project-id="biocore-report" data-project-category="report" data-priority="12">
-          <h3 class="project-card-title" data-field="title">바이오코어퍼실리티 성과보고서</h3>
+        <article class="project-card" data-project-id="biocore-report" data-project-category="report" data-priority="12" data-project-image="project-biocore-report.png">
+          <h3 class="project-card-title" data-field="title">[보고서] 2026년 바이오코어 퍼실리티 구축사업</h3>
           <p class="project-card-purpose" data-field="purpose">정신건강 진단 보조 솔루션 '콜럼버스 마인드' 플랫폼 고도화 성과 보고</p>
           <ul class="project-card-role-badges" data-field="role-badges">
             <li data-role="visualization-design">시각화 및 디자인 100%</li>
@@ -1067,16 +1112,24 @@
   </main>
 
   <!-- ============================================================
+       프로젝트 이미지 라이트박스 (새 창 대신 페이지 내 모달로 표시)
+  ============================================================ -->
+  <div id="section-project-lightbox" data-section="project-lightbox">
+    <button type="button" id="project-lightbox-close" aria-label="닫기">✕</button>
+    <img id="project-lightbox-image" src="" alt="프로젝트 상세 이미지" />
+  </div>
+
+  <!-- ============================================================
        플로팅 연락 버튼 (Sticky, 페이지 전체 노출)
        클릭 시 왼쪽으로 확장되며 상세 연락처가 노출됩니다.
   ============================================================ -->
   <div id="section-floating-contact" data-section="floating-contact">
     <div class="floating-contact-item" data-floating-action="call">
-      <button type="button" class="floating-contact-toggle" aria-label="전화번호 보기">📞</button>
+      <button type="button" class="floating-contact-toggle" aria-label="전화번호 보기">📲</button>
       <a class="floating-contact-detail" href="tel:010-9345-4024">010-9345-4024</a>
     </div>
     <div class="floating-contact-item" data-floating-action="email">
-      <button type="button" class="floating-contact-toggle" aria-label="이메일 보기">✉️</button>
+      <button type="button" class="floating-contact-toggle" aria-label="이메일 보기">📧</button>
       <a class="floating-contact-detail" href="mailto:sejin7g@naver.com">sejin7g@naver.com</a>
     </div>
   </div>
@@ -1156,6 +1209,42 @@
           card.style.display = match ? '' : 'none';
         });
       });
+    });
+
+    // 프로젝트 카드 클릭 시 라이트박스 모달로 이미지 표시
+    var lightbox = document.getElementById('section-project-lightbox');
+    var lightboxImage = document.getElementById('project-lightbox-image');
+    var lightboxCloseBtn = document.getElementById('project-lightbox-close');
+
+    function openProjectLightbox(imageFile) {
+      lightboxImage.src = imageFile;
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeProjectLightbox() {
+      lightbox.classList.remove('is-open');
+      lightboxImage.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.project-card').forEach(function (card) {
+      var imageFile = card.getAttribute('data-project-image');
+      if (imageFile) {
+        card.addEventListener('click', function () {
+          openProjectLightbox(imageFile);
+        });
+      }
+    });
+    lightboxCloseBtn.addEventListener('click', closeProjectLightbox);
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) {
+        closeProjectLightbox();
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeProjectLightbox();
+      }
     });
   </script>
 
