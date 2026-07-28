@@ -509,7 +509,10 @@
     #selected-programs-table td[data-col="program-name"] { color: var(--color-navy); font-weight: 600; }
     #selected-programs-table td[data-col="support-detail"] {
       text-align: center;
-      white-space: nowrap;
+      white-space: normal;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      line-height: 1.4;
       font-weight: 700;
       color: var(--color-blue-dark);
     }
@@ -550,8 +553,8 @@
       font-weight: 600;
       color: var(--color-navy);
     }
-    #contact-cta-info a[data-contact-field="phone"]::before { content: "📲 "; }
-    #contact-cta-info a[data-contact-field="email"]::before { content: "📧 "; }
+    #contact-cta-info span[data-contact-field="phone"]::before { content: "📲 "; }
+    #contact-cta-info span[data-contact-field="email"]::before { content: "📧 "; }
     #contact-cta-pdf-download {
       display: inline-block;
       background: var(--color-blue);
@@ -1100,8 +1103,8 @@
       <p id="contact-cta-subtitle" data-section-el="subtitle">폭넓은 경험을 통해 실질적인 성과를 만들어내는 All-Round Player</p>
 
       <div id="contact-cta-info" data-subsection="info">
-        <a href="tel:010-9345-4024" id="contact-cta-phone" data-contact-field="phone">010-9345-4024</a>
-        <a href="mailto:sejin7g@naver.com" id="contact-cta-email" data-contact-field="email">sejin7g@naver.com</a>
+        <span id="contact-cta-phone" data-contact-field="phone">010-9345-4024</span>
+        <span id="contact-cta-email" data-contact-field="email">sejin7g@naver.com</span>
       </div>
 
       <div id="contact-cta-actions" data-subsection="actions">
