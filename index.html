@@ -5,17 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>강세진 | Strategic Planner & New Business Developer</title>
   <!--
-    원본 포트폴리오(PDF) 디자인을 반영한 스타일 적용본입니다.
-    - 각 섹션은 id="section-*" 로 고유 식별자를 부여해 추후 개별 수정이 쉽도록 했습니다.
-    - 반복 요소(프로젝트 카드 등)는 data-* 속성으로 항목을 구분합니다.
-    - 인터랙션(필터/더보기 등)은 아직 JS로 구현하지 않았습니다.
+    각 섹션은 id="section-*" 로 고유 식별자를 부여해 개별 수정이 쉽도록 구성.
+    반복 요소(프로젝트 카드 등)는 data-* 속성으로 항목을 구분.
   -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 
   <style>
     /* ============================================================
-       DESIGN TOKENS — 원본 포트폴리오 컬러/타입 시스템
+       DESIGN TOKENS
     ============================================================ */
     :root {
       --color-bg: #F1F0FA;
@@ -130,8 +128,6 @@
     #hero-headline .headline-highlight {
       background: #9FC0F4;
       color: #FFFFFF;
-      padding: 0;
-      border-radius: 0;
       box-decoration-break: clone;
       -webkit-box-decoration-break: clone;
     }
@@ -300,14 +296,14 @@
       gap: 4px;
     }
     .soft-skill-title {
-      font-size: 25.8px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--color-navy);
       line-height: 1.4;
     }
     .soft-skill-desc {
       margin: 0;
-      font-size: 19.8px;
+      font-size: 15px;
       color: var(--color-body);
     }
     .skill-tag {
@@ -397,7 +393,6 @@
       color: var(--color-muted);
     }
 
-
     /* ============================================================
        5. ACHIEVEMENTS DETAIL
     ============================================================ */
@@ -425,6 +420,7 @@
     #achievements-selected-programs {
       background: var(--color-card);
       text-align: center;
+      padding: 32px 32px 24px;
     }
     .achievements-subtitle {
       font-size: 18px;
@@ -472,7 +468,6 @@
       padding: 3px 0;
       text-align: center;
     }
-    #achievements-selected-programs { padding: 32px 32px 24px; }
     #selected-programs-table {
       width: 100%;
       border-collapse: separate;
@@ -535,8 +530,6 @@
       display: inline-block;
       background: var(--color-dark-box);
       color: #FFFFFF;
-      padding: 0;
-      border-radius: 0;
       margin-top: 6px;
     }
     #contact-cta-subtitle {
@@ -698,14 +691,11 @@
 </head>
 <body>
 
-  <!-- ============================================================
-       고정 네비게이션 / 연락 CTA바
-       추후: 스크롤 시 sticky 처리, 전화/이메일 클릭 연결
-  ============================================================ -->
+  <!-- 고정 네비게이션 -->
   <header id="section-nav-bar" data-section="nav-bar">
     <div id="nav-bar-logo">KANG SE-JIN</div>
     <nav id="nav-bar-links">
-      <a href="#" data-nav-link="metrics" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">성과</a>
+      <a href="#" data-nav-link="metrics">성과</a>
       <a href="#section-who-i-am" data-nav-link="about">역량</a>
       <a href="#section-featured-projects" data-nav-link="projects">프로젝트</a>
       <a href="#section-achievements-detail" data-nav-link="achievements">주요 성과</a>
@@ -714,10 +704,7 @@
 
   <main id="page-root">
 
-    <!-- ============================================================
-         1. HERO SECTION (0~3초 구간)
-         추후: 헤드라인 카피, 배경 그라디언트 애니메이션
-    ============================================================ -->
+    <!-- 1. HERO -->
     <section id="section-hero" data-section="hero">
       <p id="hero-eyebrow" data-hero-el="eyebrow">Strategic Planner &amp; New Business Developer</p>
       <h1 id="hero-headline" data-hero-el="headline"><span class="headline-highlight">문제 정의부터 실행까지,</span><span class="headline-solid">성장을 설계하는 기획자</span></h1>
@@ -726,10 +713,7 @@
       </p>
     </section>
 
-    <!-- ============================================================
-         2. KEY METRICS BAR (3~10초 구간) — 신규 구성
-         추후: 숫자 카운트업 애니메이션
-    ============================================================ -->
+    <!-- 2. KEY METRICS BAR -->
     <section id="section-key-metrics" data-section="key-metrics">
       <ul id="key-metrics-list">
         <li class="key-metric-item" data-metric="funding">
@@ -751,10 +735,7 @@
       </ul>
     </section>
 
-    <!-- ============================================================
-         3. WHO I AM (역량 요약)
-         추후: Soft Skills / Domain / Tools 아코디언 처리
-    ============================================================ -->
+    <!-- 3. WHO I AM (역량 요약) -->
     <section id="section-who-i-am" data-section="who-i-am">
       <h2 id="who-i-am-title" data-section-el="title">Who I am</h2>
 
@@ -842,8 +823,7 @@
             <span class="skill-tag" data-skill="perplexity">Perplexity</span>
           </div>
 
-          <!-- 자격증: PRD상 하단 접힘 처리 대상 -->
-          <div class="skills-group" data-skill-group="certifications" data-collapsible="true">
+          <div class="skills-group" data-skill-group="certifications">
             <h4 class="skills-group-title" data-field="title">Certifications</h4>
             <span class="skill-tag" data-skill="cert-web-design">웹디자인기능사</span>
             <span class="skill-tag" data-skill="cert-computer-graphics">컴퓨터그래픽스운용기능사</span>
@@ -858,14 +838,10 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         4. FEATURED PROJECTS (10~30초 구간) — 핵심 리디자인 영역
-         추후: 필터 탭 인터랙션, 카드 클릭 시 상세 모달
-    ============================================================ -->
+    <!-- 4. FEATURED PROJECTS -->
     <section id="section-featured-projects" data-section="featured-projects">
       <h2 id="featured-projects-title" data-section-el="title">Featured Projects</h2>
 
-      <!-- 필터 탭 (기능 미구현, 마크업만) -->
       <div id="featured-projects-filter" data-subsection="filter">
         <button class="filter-tab" data-filter="all" aria-pressed="true">전체</button>
         <button class="filter-tab" data-filter="ir">IR</button>
@@ -874,7 +850,6 @@
         <button class="filter-tab" data-filter="service-planning">서비스기획</button>
       </div>
 
-      <!-- 우선 노출 카드 (P0) -->
       <div id="featured-projects-grid" data-subsection="grid">
 
         <article class="project-card" data-project-id="aivem-ir" data-project-category="ir" data-priority="1" data-project-image="project-aivem-ir.png">
@@ -1030,74 +1005,68 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         5. ACHIEVEMENTS DETAIL (신뢰도 보강)
-         추후: 표 → 타임라인 형태 전환 검토
-    ============================================================ -->
+    <!-- 5. ACHIEVEMENTS DETAIL -->
     <section id="section-achievements-detail" data-section="achievements-detail">
       <h2 id="achievements-detail-title" data-section-el="title">Achievements Detail</h2>
 
       <div id="achievements-detail-body">
-      <div id="achievements-funding" data-subsection="funding">
-        <h3 class="achievements-subtitle" data-field="title">투자 유치 성공</h3>
-        <span class="achievements-highlight-badge" data-field="badge">Pre-A</span>
-        <span class="achievements-highlight-value" data-field="value">20억</span>
-        <span class="achievements-highlight-date" data-field="date">2025.07</span>
-        <ul class="achievements-highlight-details" data-field="details">
-          <li>IR Deck 기획 및 작성</li>
-          <li>핵심 데이터 구조화</li>
-          <li>재무 추정 모델링</li>
-          <li>사업 로드맵 설계</li>
-          <li>투자금 활용 계획 수립</li>
-        </ul>
-      </div>
+        <div id="achievements-funding" data-subsection="funding">
+          <h3 class="achievements-subtitle" data-field="title">투자 유치 성공</h3>
+          <span class="achievements-highlight-badge" data-field="badge">Pre-A</span>
+          <span class="achievements-highlight-value" data-field="value">20억</span>
+          <span class="achievements-highlight-date" data-field="date">2025.07</span>
+          <ul class="achievements-highlight-details" data-field="details">
+            <li>IR Deck 기획 및 작성</li>
+            <li>핵심 데이터 구조화</li>
+            <li>재무 추정 모델링</li>
+            <li>사업 로드맵 설계</li>
+            <li>투자금 활용 계획 수립</li>
+          </ul>
+        </div>
 
-      <div id="achievements-selected-programs" data-subsection="selected-programs">
-        <h3 class="achievements-subtitle" data-field="title">선정 사업</h3>
-        <table id="selected-programs-table" data-field="table">
-          <thead>
-            <tr>
-              <th data-col="program-name">사업명</th>
-              <th data-col="organizer">주관</th>
-              <th data-col="support-detail">지원 내용</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr data-program-id="ajou-biocore">
-              <td data-col="program-name">2024 아주대학교 의료원 바이오 Core Facility 구축 사업</td>
-              <td data-col="organizer">과학기술정보통신부, 한국연구재단</td>
-              <td data-col="support-detail">4.5억</td>
-            </tr>
-            <tr data-program-id="global-corp-collab">
-              <td data-col="program-name">2024 글로벌 기업 협업 프로그램</td>
-              <td data-col="organizer">중소벤처기업부</td>
-              <td data-col="support-detail">2억</td>
-            </tr>
-            <tr data-program-id="mighty-hallym">
-              <td data-col="program-name">2024 마이티 한림 신규 과제</td>
-              <td data-col="organizer">한림대 강남성심병원</td>
-              <td data-col="support-detail">1.2억</td>
-            </tr>
-            <tr data-program-id="newcontents-kocca">
-              <td data-col="program-name">2024 뉴콘텐츠 기업지원센터 멤버십 기업 모집</td>
-              <td data-col="organizer">한국콘텐츠진흥원</td>
-              <td data-col="support-detail">인프라/투자 지원</td>
-            </tr>
-            <tr data-program-id="gwangjin-hub-2024">
-              <td data-col="program-name">2024년 광진경제허브센터 신규 입주기업 모집</td>
-              <td data-col="organizer">엔슬파트너스, 광진경제허브센터</td>
-              <td data-col="support-detail">사무공간/인프라/투자 지원</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <div id="achievements-selected-programs" data-subsection="selected-programs">
+          <h3 class="achievements-subtitle" data-field="title">선정 사업</h3>
+          <table id="selected-programs-table" data-field="table">
+            <thead>
+              <tr>
+                <th data-col="program-name">사업명</th>
+                <th data-col="organizer">주관</th>
+                <th data-col="support-detail">지원 내용</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-program-id="ajou-biocore">
+                <td data-col="program-name">2024 아주대학교 의료원 바이오 Core Facility 구축 사업</td>
+                <td data-col="organizer">과학기술정보통신부, 한국연구재단</td>
+                <td data-col="support-detail">4.5억</td>
+              </tr>
+              <tr data-program-id="global-corp-collab">
+                <td data-col="program-name">2024 글로벌 기업 협업 프로그램</td>
+                <td data-col="organizer">중소벤처기업부</td>
+                <td data-col="support-detail">2억</td>
+              </tr>
+              <tr data-program-id="mighty-hallym">
+                <td data-col="program-name">2024 마이티 한림 신규 과제</td>
+                <td data-col="organizer">한림대 강남성심병원</td>
+                <td data-col="support-detail">1.2억</td>
+              </tr>
+              <tr data-program-id="newcontents-kocca">
+                <td data-col="program-name">2024 뉴콘텐츠 기업지원센터 멤버십 기업 모집</td>
+                <td data-col="organizer">한국콘텐츠진흥원</td>
+                <td data-col="support-detail">인프라/투자 지원</td>
+              </tr>
+              <tr data-program-id="gwangjin-hub-2024">
+                <td data-col="program-name">2024년 광진경제허브센터 신규 입주기업 모집</td>
+                <td data-col="organizer">엔슬파트너스, 광진경제허브센터</td>
+                <td data-col="support-detail">사무공간/인프라/투자 지원</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         6. CONTACT / CTA
-         추후: 클릭 시 tel:/mailto: 연결, PDF 다운로드 링크 실제 연결
-    ============================================================ -->
+    <!-- 6. CONTACT / CTA -->
     <section id="section-contact-cta" data-section="contact-cta">
       <h2 id="contact-cta-title" data-section-el="title"><span class="cta-line-plain">신뢰와 소통으로</span><span class="cta-line-boxed">성공적인 성장의 길을 만듭니다.</span></h2>
       <p id="contact-cta-subtitle" data-section-el="subtitle">폭넓은 경험을 통해 실질적인 성과를 만들어내는 All-Round Player</p>
@@ -1114,18 +1083,13 @@
 
   </main>
 
-  <!-- ============================================================
-       프로젝트 이미지 라이트박스 (새 창 대신 페이지 내 모달로 표시)
-  ============================================================ -->
+  <!-- 프로젝트 이미지 라이트박스 (페이지 내 모달) -->
   <div id="section-project-lightbox" data-section="project-lightbox">
     <button type="button" id="project-lightbox-close" aria-label="닫기">✕</button>
     <img id="project-lightbox-image" src="" alt="프로젝트 상세 이미지" />
   </div>
 
-  <!-- ============================================================
-       플로팅 연락 버튼 (Sticky, 페이지 전체 노출)
-       클릭 시 왼쪽으로 확장되며 상세 연락처가 노출됩니다.
-  ============================================================ -->
+  <!-- 플로팅 연락 버튼 (클릭 시 확장되며 연락처 노출) -->
   <div id="section-floating-contact" data-section="floating-contact">
     <div class="floating-contact-item" data-floating-action="call">
       <button type="button" class="floating-contact-toggle" aria-label="전화번호 보기">📲</button>
@@ -1138,6 +1102,16 @@
   </div>
 
   <script>
+    // 상단 "성과" 메뉴: 페이지 최상단(히어로 포함)으로 스크롤
+    var metricsNavLink = document.querySelector('[data-nav-link="metrics"]');
+    if (metricsNavLink) {
+      metricsNavLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // 플로팅 연락 버튼: 클릭 시 하나만 펼쳐지고, 바깥 클릭 시 닫힘
     document.querySelectorAll('.floating-contact-toggle').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var item = btn.closest('.floating-contact-item');
@@ -1158,7 +1132,7 @@
       }
     });
 
-    // 연락처 텍스트 클릭 시 클립보드 자동 복사 (드래그로 직접 선택 중이면 복사 동작은 건너뜀)
+    // 연락처 텍스트 클릭 시 클립보드 복사 (드래그로 직접 선택 중이면 건너뜀)
     document.querySelectorAll('.floating-contact-detail').forEach(function (el) {
       var originalText = el.textContent;
 
@@ -1181,7 +1155,7 @@
       el.addEventListener('click', function (e) {
         var selectedText = window.getSelection().toString();
         if (selectedText.length > 0) {
-          return; // 사용자가 텍스트를 드래그로 직접 선택 중이면 복사 동작을 건너뜀
+          return;
         }
         e.preventDefault();
         copyToClipboard(originalText).then(function () {
